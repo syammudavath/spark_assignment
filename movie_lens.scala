@@ -3,7 +3,6 @@
 import org.apache.spark.rdd.RDD
 case class Rating(user_ID: Integer, movie_ID: Integer, rating: Integer, timestamp: String)
 case class Movie(movie_ID: Integer, title: String, genre: String)
-case class User(user_ID: Integer, gender: String, age: Integer, occupation: String, zip_code: String)
 //parsing the schema for rating data set
 def parseRatings(row: String): Rating = {
     val splitted = row.split("::").map(_.trim).toList
