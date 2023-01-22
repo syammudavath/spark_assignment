@@ -23,9 +23,9 @@ val movies = sc.textFile("data/movies.dat").map(element => parseMovies(element))
 // COMMAND ----------
 
 //loading data for both dataset and converting as dataframe
-val movies = sc.textFile("s3://hp-bigdata-prod-enrichment/shyam/movies.dat").map(element => parseMovies(element)).toDF()
+val movies = sc.textFile("s3://****/shyam/movies.dat").map(element => parseMovies(element)).toDF()
 
-val ratings = sc.textFile("s3://hp-bigdata-prod-enrichment/shyam/ratings.dat").map(element => parseRatings(element)).toDF()
+val ratings = sc.textFile("s3:/***/shyam/ratings.dat").map(element => parseRatings(element)).toDF()
 
 
 // COMMAND ----------
