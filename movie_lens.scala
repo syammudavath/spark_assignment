@@ -4,7 +4,7 @@ import org.apache.spark.rdd.RDD
 case class Rating(user_ID: Integer, movie_ID: Integer, rating: Integer, timestamp: String)
 case class Movie(movie_ID: Integer, title: String, genre: String)
 case class User(user_ID: Integer, gender: String, age: Integer, occupation: String, zip_code: String)
-//parsing the data for rating
+//parsing the schema for rating data set
 def parseRatings(row: String): Rating = {
     val splitted = row.split("::").map(_.trim).toList
     return Rating(splitted(0).toInt, splitted(1).toInt, splitted(2).toInt, splitted(3))
@@ -12,7 +12,7 @@ def parseRatings(row: String): Rating = {
 
 // COMMAND ----------
 
-//parsing the data for movies
+//parsing the schema for movies data
 def parseMovies(row: String): Movie = {
     val splitted = row.split("::").map(_.trim).toList
     return Movie(splitted(0).toInt, splitted(1), splitted(2))
